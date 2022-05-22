@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("pages")
-public class SignInController {
+public class PagesController {
     @GetMapping("sign-in")
     private String getSignInPage(){
         return "pages/sign-in.html";
