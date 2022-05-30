@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class PatientService {
+    public int lastId = 5;
     private List<Patient> patientList = new ArrayList<Patient>() {{
         add(new Patient(0,"Radu Baciu", true));
         add(new Patient(1,"Andrian Libenciuc",false));
@@ -40,6 +41,13 @@ public class PatientService {
             patientList.remove(index);
             return true;
         }
+
+    }
+    public String addPatient(Patient patient){
+
+        int id=patientList.size();
+        patientList.add(patient);
+        return "Patient added succesfully";
 
     }
 }
