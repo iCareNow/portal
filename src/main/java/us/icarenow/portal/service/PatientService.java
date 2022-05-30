@@ -24,4 +24,22 @@ public class PatientService {
         return patientList.stream().filter(patient -> patient.getId() == id).findFirst();
 
     }
+    /**
+     * Delete patient with this id
+     */
+    public boolean delete(int id){
+        int index = -1;
+        for (int i = 0; i < patientList.size(); i++){
+            if (patientList.get(i).getId() == id) {
+                index = i;
+            }
+        }
+        if (index == -1){
+            return false ;
+        } else {
+            patientList.remove(index);
+            return true;
+        }
+
+    }
 }
