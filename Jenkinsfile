@@ -16,6 +16,13 @@ pipeline {
                 }
             }
         }
+        stage('Test2') {
+                    steps {
+                        withMaven(maven: 'maven3') {
+                            sh "mvn test"
+                        }
+                    }
+                }
         stage('Sonar') {
             steps {
                 echo 'Running Sonar....'
